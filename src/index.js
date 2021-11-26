@@ -5,6 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PetsOrderContextProvider } from './context/petsOrderContext';
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_PROJECT_ID,
+  storageBucket: "store-app-72f54.appspot.com",
+  messagingSenderId:process.env.REACT_APP_MESSGAE_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 ReactDOM.render(
   <PetsOrderContextProvider>
     <App />
@@ -16,3 +34,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
