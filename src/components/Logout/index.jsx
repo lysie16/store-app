@@ -22,7 +22,7 @@ export const Logout = () => {
     const logoutUser = () => {
         const auth = getAuth();
         try {
-            await signOut(auth);
+          await signOut(auth);
         }catch(error) {
             console.log(error)
         }
